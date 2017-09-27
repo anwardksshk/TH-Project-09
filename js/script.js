@@ -23,11 +23,8 @@ for (let i=0; i< notificationMessages.length; i++)	{
 notificationBadge.textContent = notificationMessages.length;
 
 notificationWrap.addEventListener('click', () => {
-	if(notificationList.style.display === "none")	{
    		notificationList.style.display = "flex";
-	} else {
-		notificationList.style.display = "none";
-	}
+		notificationBadge.style.display = "none";
 });
 
 //**********ALERT
