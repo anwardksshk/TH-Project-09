@@ -45,3 +45,29 @@ trafficFilters.addEventListener('click', (e) => {
 	}
 	e.target.className = "active";	
 });
+
+//**********NEW MEMBERS
+
+$.ajax({
+  url: 'https://randomuser.me/api/?format=json&results=5&inc=picture,name,email&nat=gb',
+  dataType: 'json',
+  success: function(data) {
+	for (let i = 0; i<4 ; i++) {
+		let newMember = data.results[i];
+		let thumbnail = newMember.picture.thumbnail;
+		thumbnail = '<img class="newMember-thumbnail" src="' + thumbnail + '" alt="member profile picture">';
+		let email = newMember.email;
+		let fullName = newMember.name.first + " " + newMember.name.last;
+		
+		let memberDiv = '<div class="newMember-wrapper clearfix">';
+		memberDiv += thumbnail;
+		memberDiv += '<p class="newMember-name">' + fullName + '</p>';
+		memberDiv += '<p class="newMember-email">'+ email + '</p>';
+		memberDiv += '<p class="joined-date">28/09/2017</p>';
+        memberDiv += '</div>';
+		  $("#new-members").append(memberDiv);
+	}
+
+  }
+});
+   

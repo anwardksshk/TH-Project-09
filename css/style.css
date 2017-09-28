@@ -281,7 +281,7 @@ svg	{
 }
 
 #search::placeholder	{
-	font-size: 14px;#353755
+	font-size: 14px;
 	font-style: italic;
 }
 
@@ -333,18 +333,18 @@ svg	{
 /*OTHER CHARTS************************/
 
 #dailyTraffic-bar {
-	padding: 12px 20px;
 	border-bottom: 1px solid #ccc;
 }
 
-#mobile-users	{
-	padding: 12px;
+#mobile-users,
+#dailyTraffic-bar {
+	padding: 27px 20px 12px;
 }
 
 /*SOCIAL STATS************************/
 
 #social-stats	{
-	padding: 12px 20px;
+	padding: 12px 20px 20px;
 }
 
 .social-icon-wrapper {
@@ -366,7 +366,7 @@ svg	{
 .social-type-head {
 	text-align: left;
 	font-size: 1.2em;
-	letter-spacing: .2em;
+	letter-spacing: .1em;
 	color: #7377bf;
 	margin-top: 16px;
 }
@@ -394,7 +394,248 @@ svg	{
 #google {
 	margin-top: 16px;
 }
+/*MEMBERS SECTION************************/
 
+#new-members,
+#recent-activity {
+	padding: 27px 20px 12px;
+}
+
+#new-members {
+	border-bottom: 1px solid #ccc;
+}
+.newMember-wrapper,
+.activity-wrapper {
+	width: 100%;
+	text-align: left;
+	border-bottom: 1px solid #ccc;
+	padding: 8px 6px;
+	margin-top: 12px;
+}
+
+.newMember-wrapper:first-child,
+.activity-wrapper:first-child{
+	margin-top: 0;
+}
+
+.newMember-wrapper:last-child,
+.activity-wrapper:last-child {
+	border-bottom: none;
+}
+
+.newMember-thumbnail,
+.member-image {
+	float: left;
+	width: 55px;
+	height: 55px;
+	border-radius: 50%;
+	margin-right: 16px;
+}
+
+.newMember-name,
+.newMember-email,
+.member-activity,
+.activity-time {
+	margin: 0;
+/*	width: calc(100% -  71px);  71px = 55+16px*/
+}
+
+.newMember-name,
+.member-activity {
+	text-transform: capitalize;
+	font-size: 1em;
+	font-weight: 400;
+	line-height: 1;
+}
+
+.newMember-email	{
+	font-size: .8em;
+	color: #7377bf;
+}
+
+.joined-date,
+.activity-time {
+	font-size: .8em;
+}
+
+.activity-time {
+	float: left;
+}
+
+.arrow {
+	text-decoration: none;
+	font-size: 30px;
+	font-weight: 300;
+	color: #7377bf;
+	float: right;
+	margin-top: -16px;
+	margin-bottom: 22px;
+}
+
+.member-activity {
+	width: 70%;
+	font-size: .9em;
+}
+
+
+/*MESSAGE + SETTINGS************************/
+
+#message-user,
+#settings {
+	padding: 27px 20px 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+#message-user {
+	border-bottom: 1px solid #ccc;
+}
+
+#searchInput,
+#message-content,
+button,
+#timezone-dropdown {
+	width: 100%;
+}
+
+#searchInput,
+#message-content,
+#timezone-dropdown {
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 10px;
+	font-size: 14px;
+	background-color: #F0F5F5;
+}
+
+#searchInput:focus,
+#message-content:focus {
+	outline-width: 0;
+	border: 1px solid #353755;
+}
+
+#searchInput::placeholder,
+#message-content::placeholder {
+	font-size: 14px;
+	opacity: .7;
+}
+
+#message-content,
+button,
+#profilePublic-wrapper {
+	margin-top: 16px;
+}
+
+#timezone-dropdown {
+	height: 38px;
+	margin-top: 26px;
+	background-image: url('../icons/icon-dropdown.svg');
+  	background-position: 98% 50%; 
+  	background-repeat: no-repeat;
+	-webkit-appearance: none;
+  	-moz-appearance: none;
+	
+}
+button {
+	padding: 16px;
+	border-radius: 5px;
+	font-size: 14px;
+	text-transform: uppercase;
+	color: white;
+	background-color: #7377bf;
+	border: 0;
+	margin-bottom: 12px;
+}
+
+button:hover {
+	opacity: 0.8;
+}
+
+button:focus	{
+	background-color: #353755;
+}
+
+#emailNoti-wrapper,
+#profilePublic-wrapper {
+	text-align: left;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.toggle-switch-name {
+	font-size: 14px;
+	width: 180px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 34px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;	
+}
+
+input:checked {
+	
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(46px);
+}
+
+#save-cancel-wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#saveButton,
+#cancelButton	{
+	width: 48%;
+}
+
+#cancelButton {
+	background-color: #B2B2B2;
+}
 
 /*************************************** 
 TABLET (768px)
@@ -427,12 +668,6 @@ TABLET (768px)
 		display:  flex;
 		justify-content: space-between;
 		align-items: center;
-		margin-top: 0;/*cancels out top-gutter classification to make way for a border-left in mobile users*/
-	}
-	
-	#dailyTraffic-bar,
-	#mobile-users	{
-		padding-top: 27px; /*previous padding-top 12px + top-gutter 15px */
 	}
 	
 	#dailyTraffic-bar	{
@@ -448,6 +683,11 @@ TABLET (768px)
 	}
 	
 /*SOCIAL STATS************************/
+	.social-icon-wrapper {
+		margin-left: 4px;
+		margin-right: 19px;
+	}
+	
 	#twitter,
 	#facebook,
 	#google 	{
@@ -460,8 +700,78 @@ TABLET (768px)
 		margin-top: 0;
 		margin-left: 2%;
 	}
+/*MEMBERS SECTION************************/
 
+	#members-wrapper {
+		display:  flex;
+		justify-content: space-between;
+		align-items: stretch;
+	}
+	
+	#new-members,
+	#recent-activity	{
+		width: 50%;
+	}
+	
+	#new-members	{
+		border-bottom: none;
+	}
+	#recent-activity	{
+		border-left: 1px solid #ccc;
+	}
+	
+	.newMember-wrapper,
+	.activity-wrapper {
+		height: 80px;
+	}
+
+
+	.newMember-thumbnail,
+	.member-image{
+		height: 40px;
+		width: 40px;
+		margin-right: 14px;
+	}
+
+	.newMember-name {
+		line-height: 1.2;
+	}
+	
+	.newMember-email	{
+		float:left;
+	}
+
+	.joined-date {
+		float: right;
+		margin-top: 0;
+	}
+	
+	.arrow {
+		margin-bottom: 0;
+	}
+		
+/*MESSAGE + SETTINGS************************/
+	#messageSettings-wrapper {
+		display:  flex;
+		justify-content: space-between;
+		align-items: stretch;
+		margin-bottom: auto;
+	}
+	
+	#message-user,
+	#settings	{
+		width: 50%;
+	}
+	
+	#message-user	{
+		border-bottom: none;
+	}
+	#settings	{
+		border-left: 1px solid #ccc;
+	}
+	
 }
+
 
 /*************************************** 
 DESKTOP (1024px)
@@ -527,8 +837,18 @@ DESKTOP (1024px)
 	}
 	
 /*SOCIAL STATS************************/
+	
+	.social-icon-wrapper {
+		margin-left: 15px;
+		margin-right: 30px;
+	}
 
+	.social-type-head	{
+		margin-top: 12px;
+	}
+	
 	.social-stats-number {
+		margin-top: -32px;
 		font-size: 2.8em;
 	}
 
