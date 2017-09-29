@@ -77,12 +77,15 @@ $.ajax({
    
 //**********MESSAGE + SETTINGS
 const form = document.getElementById("message-form");
-const userName = document.getElementById("user-searchInput").value;
-const messageContent = document.getElementById("message-content").value;
 
 //MESSAGE FORM SUBMIT
 form.addEventListener('submit', (e) => {
+	let userName = document.getElementById("user-searchInput").value;
+	let messageContent = document.getElementById("message-content").value;
+	
 	e.preventDefault();
+	
+	console.log(userName);
 	if (userName == "" || messageContent == "") {
             alert('One of the fields are empty.');
           } else {
