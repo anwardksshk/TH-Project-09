@@ -20,9 +20,7 @@ for (let i=0; i< notificationMessages.length; i++)	{
 	notificationList.appendChild(noti_item);
 }
 
-notificationBadge.textContent = notificationMessages.length;
-
-notificationWrap.addEventListener('click', () => {
+notificationWrap.addEventListener('click', (e) => {
    		notificationList.style.display = "flex";
 		notificationBadge.style.display = "none";
 });

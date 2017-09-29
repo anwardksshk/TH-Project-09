@@ -114,9 +114,8 @@ header {
 }
 
 .notification-icon	{
-  height: 30px;
-  width: 30px;
-  opacity: .5;
+  height: 25px;
+  width: 25px;
   transition: 0.4s;
 }
 
@@ -125,15 +124,15 @@ header {
 }
 
 #notification-badge {
-	height: 18px;
-  	width: 18px;
+	height: 7px;
+  	width: 7px;
 	position: absolute;
 	top: -4px;
-	right: 1px;
+	right: -2px;
 	font-size:12px;
 	text-align: center;
 	padding: 1px 0; /*makes the text vertical alignment to center*/
-	background-color: red;
+	background-color: #85DB81;
 	border-radius: 50%;
 }
 
