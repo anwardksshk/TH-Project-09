@@ -10,7 +10,7 @@ chartSelect.addEventListener('click', (e) => {
 		let filterType = e.target.textContent.toUpperCase();
 		
 		if (filterType === "HOUR" ) {
-			hour();
+			hourly();
 		} else if (filterType === "DAILY")	{
 			daily();
 		} else if (filterType === "WEEKLY")	{

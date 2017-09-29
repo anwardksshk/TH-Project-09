@@ -492,14 +492,14 @@ svg	{
 	border-bottom: 1px solid #ccc;
 }
 
-#searchInput,
+#user-searchInput,
 #message-content,
 button,
 #timezone-dropdown {
 	width: 100%;
 }
 
-#searchInput,
+#user-searchInput,
 #message-content,
 #timezone-dropdown {
 	border: 1px solid #ccc;
@@ -509,13 +509,13 @@ button,
 	background-color: #F0F5F5;
 }
 
-#searchInput:focus,
+#user-searchInput:focus,
 #message-content:focus {
 	outline-width: 0;
 	border: 1px solid #353755;
 }
 
-#searchInput::placeholder,
+#user-searchInput::placeholder,
 #message-content::placeholder {
 	font-size: 14px;
 	opacity: .7;
@@ -556,70 +556,65 @@ button:focus	{
 	background-color: #353755;
 }
 
-#emailNoti-wrapper,
-#profilePublic-wrapper {
-	text-align: left;
+.toggle-switch-wrapper {
 	display: flex;
-	justify-content: flex-start;
 	align-items: center;
+}
+
+#publicProfile-wrapper {
+	margin-top: 10px;
 }
 
 .toggle-switch-name {
 	font-size: 14px;
-	width: 180px;
+	text-align: left;
+	width: 200px;
 }
 
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 80px;
-  height: 34px;
+.onoffswitch {
+    position: relative; width: 80px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
 }
-
-.switch input {display:none;}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
-  border-radius: 34px;
+.onoffswitch-checkbox {
+    display: none;
 }
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-  border-radius: 50%;
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 1px solid #CCCCCC; border-radius: 35px;
 }
-
-input:checked + .slider {
-  background-color: #2196F3;	
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
 }
-
-input:checked {
-	
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 31px; padding: 0; line-height: 35px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
 }
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+.onoffswitch-inner:before {
+    content: "ON";
+    padding-right: 30px;
+    background-color: #7377BF; color: #FFFFFF;
 }
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(46px);
+.onoffswitch-inner:after {
+    content: "OFF";
+    padding-right: 10px;
+    background-color: #B2B2B2; color: ;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 25px; margin: 5px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 46px;
+    border: 1px solid #CCCCCC; border-radius: 31px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
 }
 
 #save-cancel-wrapper {
@@ -637,6 +632,9 @@ input:checked + .slider:before {
 	background-color: #B2B2B2;
 }
 
+#cancelButton:focus {
+	background-color: #626464;
+}
 /*************************************** 
 TABLET (768px)
 ***************************************/
@@ -813,7 +811,7 @@ DESKTOP (1024px)
 	main	{
 		width: calc(100% - 86px); /*86px = width of nav*/
 		float: right;
-		position: fixed;
+		position: absolute;
 		top: 70px; /*70px = height of header*/
 		left: 86px; /*86px = width of nav*/
 		height: 100%;

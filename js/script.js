@@ -48,10 +48,12 @@ trafficFilters.addEventListener('click', (e) => {
 
 //**********NEW MEMBERS
 
+
 $.ajax({
   url: 'https://randomuser.me/api/?format=json&results=5&inc=picture,name,email&nat=gb',
   dataType: 'json',
   success: function(data) {
+	let datalist = '<datalist id="current-members">';  
 	for (let i = 0; i<4 ; i++) {
 		let newMember = data.results[i];
 		let thumbnail = newMember.picture.thumbnail;
@@ -66,8 +68,63 @@ $.ajax({
 		memberDiv += '<p class="joined-date">28/09/2017</p>';
         memberDiv += '</div>';
 		  $("#new-members").append(memberDiv);
+		
+		datalist += '<option value="' + fullName + '">';
+		
 	}
+    $("#message-form").append(datalist);  
 
   }
 });
    
+//**********MESSAGE + SETTINGS
+const form = document.getElementById("message-form");
+const userName = document.getElementById("user-searchInput").value;
+const messageContent = document.getElementById("message-content").value;
+
+//MESSAGE FORM SUBMIT
+form.addEventListener('submit', (e) => {
+	e.preventDefault();
+	if (userName == "" || messageContent == "") {
+            alert('One of the fields are empty.');
+          } else {
+            alert('Message has been sent.');
+          }
+});
+
+//LOCAL STORAGE
+
+//Load from local storage WHEN PAGE UPS
+      if (localStorage.length > 1) {
+        const emailPreference = JSON.parse(localStorage.getItem("emailNoti"));
+		$('#emailNoti').prop('checked', emailPreference);
+        const profilePreference = JSON.parse(localStorage.getItem("publicProfile"));
+		$('#publicProfile').prop('checked', profilePreference);
+        const myTimezone = localStorage.getItem("timezone-dropdown");
+		$("#timezone-dropdown").val(myTimezone)
+      }
+
+//SAVE BUTTON
+$("#saveButton").click(function() {
+	if (typeof(localStorage) !== "undefined") {
+          
+          const emailNotifications = document.getElementById("emailNoti");
+          localStorage.setItem("emailNoti", emailNotifications.checked);
+          const profileToPublic = document.getElementById("publicProfile");
+          localStorage.setItem("publicProfile", profileToPublic.checked);
+          const timezoneValue = document.getElementById("timezone-dropdown").value;
+          localStorage.setItem("timezone-dropdown", timezoneValue);
+		  alert("Settings Saved");
+        } else {
+            // Sorry! No Web Storage support.
+            console.log('Sorry! No Web Storage support.')
+          }
+	
+}) 
+      
+      
+//CANCEL BUTTON
+$("#cancelButton").click(function() {
+        localStorage.clear();
+        location.reload(); //reloads the page
+})

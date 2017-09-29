@@ -233,8 +233,8 @@
 					<div class="card-header">
 						<h3 class="sub-head">Message User</h3>
 					</div>
-					<form id="message-form" role="form">
-						<input id="searchInput" type="text" name="searchinput" aria-label="Search" placeholder="Search for User">
+					<form id="message-form">
+						<input id="user-searchInput" type="text" name="searchinput" aria-label="Search" placeholder="Search for User" list="current-members">
 						<textarea id="message-content" name="messagecontent" rows="6" placeholder="Message for User"></textarea>
 						<button id="sendButton" class="form-button" type="submit" name="send">Send</button>
               	   </form>
@@ -243,21 +243,26 @@
 					<div class="card-header">
 						<h3 class="sub-head">Settings</h3>
 					</div>
-					<div id="emailNoti-wrapper">
+					<div id="emailNoti-wrapper" class="toggle-switch-wrapper">
 						<span class="toggle-switch-name">Send Email Notification</span>
-						<label for="toggle-checkbox" class="switch">
-						  <input id="toggle-checkbox" type="checkbox" name="toggle-checkbox" checked>
-						  <span class="slider round"></span>
-						</label>
+						<div class="onoffswitch">
+							<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="emailNoti" checked>
+							<label class="onoffswitch-label" for="emailNoti">
+								<span class="onoffswitch-inner"></span>
+								<span class="onoffswitch-switch"></span>
+							</label>
+						</div>
 					</div>
-					<div id="profilePublic-wrapper">
-						<span class="toggle-switch-name">Set Profile To Public</span>
-						<label for="toggle-checkbox" class="switch">
-						  <input id="toggle-checkbox" type="checkbox" name="toggle-checkbox" checked>
-						  <span class="slider round"></span>
-						</label>
+					<div id="publicProfile-wrapper" class="toggle-switch-wrapper">
+						<span class="toggle-switch-name">Set Profile to Public</span>
+						<div class="onoffswitch">
+							<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="publicProfile" checked>
+							<label class="onoffswitch-label" for="publicProfile">
+								<span class="onoffswitch-inner"></span>
+								<span class="onoffswitch-switch"></span>
+							</label>
+						</div>
 					</div>
-					
 					<div id="timezone">
 					<select name="timezone-dropdown" id="timezone-dropdown">
 					  <option id="choose" selected hidden disabled>Select Timezone</option>
