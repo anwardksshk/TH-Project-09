@@ -120,7 +120,7 @@ header {
 }
 
 #notification-wrap:hover .notification-icon {
-	opacity: 1;
+	transform: scale(1.1);
 }
 
 #notification-badge {
@@ -134,7 +134,10 @@ header {
 	padding: 1px 0; /*makes the text vertical alignment to center*/
 	background-color: #85DB81;
 	border-radius: 50%;
+	transition: transform .3s ease-out;
+	
 }
+
 
 #notification-list {
   display: none;
