@@ -10,7 +10,7 @@
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body id="wrapper">
-		<header role="banner">
+		<header>
 			<!-- LOGO -->
 			<h1 id="logo-name"><span class="bold">Your</span>App&trade;</h1>
 			<!-- NOTIFICATION -->
@@ -28,7 +28,7 @@
 			</div>
 		</header>
 		
-		<nav role="navigation">
+		<nav>
 			<!--			DASHBOARD-->
 			<div class="nav-item selected">
 				<a href="index.html" class="nav-links">
@@ -235,6 +235,8 @@
 					</div>
 					<form id="message-form" autocomplete="off">
 						<input id="user-searchInput" type="text" name="searchinput" aria-label="Search" placeholder="Search for User" list="current-members">
+						<datalist id="current-members">
+						</datalist>
 						<textarea id="message-content" name="messagecontent" rows="6" placeholder="Message for User"></textarea>
 						<button id="sendButton" class="form-button" type="submit" name="send">Send</button>
               	   </form>

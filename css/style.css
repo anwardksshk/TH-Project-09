@@ -214,12 +214,15 @@ nav	{
 }
 
 svg	{
-	fill: white;
 	height: 30px;
 	width: 30px;
 	opacity: .5;
 	transition: all .3s ease-in;
 	
+}
+
+.st0 {
+	fill: #FFF;
 }
 
 .nav-item:hover svg	{
@@ -285,6 +288,7 @@ svg	{
 #search::placeholder	{
 	font-size: 14px;
 	font-style: italic;
+	opacity: .7;
 }
 
 /*ALERT************************/
@@ -601,7 +605,7 @@ button:focus	{
 .onoffswitch-inner:after {
     content: "OFF";
     padding-right: 10px;
-    background-color: #B2B2B2; color: ;
+    background-color: #B2B2B2;
     text-align: right;
 }
 .onoffswitch-switch {

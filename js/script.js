@@ -51,7 +51,7 @@ $.ajax({
   url: 'https://randomuser.me/api/?format=json&results=5&inc=picture,name,email&nat=gb',
   dataType: 'json',
   success: function(data) {
-	let datalist = '<datalist id="current-members">';  
+	let datalist;
 	for (let i = 0; i<4 ; i++) {
 		let newMember = data.results[i];
 		let thumbnail = newMember.picture.thumbnail;
@@ -70,7 +70,7 @@ $.ajax({
 		datalist += '<option value="' + fullName + '">';
 		
 	}
-    $("#message-form").append(datalist);  
+    $("#current-members").append(datalist);  
 
   }
 });
